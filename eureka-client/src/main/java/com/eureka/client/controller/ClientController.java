@@ -25,6 +25,7 @@ public class ClientController {
         RestTemplate restTemplate = restTemplateBuilder.build();
         InstanceInfo instanceInfo = eurekaClient.getNextServerFromEureka("eureka-service", false);
         String serviceBaseUrl = instanceInfo.getHomePageUrl();
+        System.out.println("hello");
         return restTemplate.getForObject(serviceBaseUrl, String.class);
     }
 
